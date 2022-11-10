@@ -54,7 +54,7 @@ jobs:
         with:
           type: 'zip'
           filename: 'converter.zip'
-          path: bin/Release/net6.0-windows/win-x64/publish/
+          directory: bin/Release/net6.0-windows/win-x64/publish/
 
       - uses: ncipollo/release-action@v1
         with:
