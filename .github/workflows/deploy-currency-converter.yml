@@ -33,12 +33,12 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: ${{ github.ref }}
       
-  zip-files:
-    - uses: actions/checkout@v2
-    - uses:  vimtor/action-zip@v1
-      with:
-        # github-token: ${{ secrets.GITHUB_TOKEN }}
-        # pattern: bin/Release/net6.0-windows/win-x64/publish/*.exe
-        # release-url: ${{ steps.create_release.outputs.upload_url }}
-        files: bin/Release/net6.0-windows/win-x64publish/
-        dest: converter.zip
+    zip-files:
+      - uses: actions/checkout@v2
+      - uses:  vimtor/action-zip@v1
+        with:
+          # github-token: ${{ secrets.GITHUB_TOKEN }}
+          # pattern: bin/Release/net6.0-windows/win-x64/publish/*.exe
+          # release-url: ${{ steps.create_release.outputs.upload_url }}
+          files: bin/Release/net6.0-windows/win-x64publish/
+          dest: converter.zip
