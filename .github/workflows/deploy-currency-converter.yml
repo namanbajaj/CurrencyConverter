@@ -33,8 +33,8 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: ${{ github.ref }}
 
-      # - uses: namanbajaj/release-asset-action@v2
-      #   with:
-      #     github-token: ${{ secrets.GITHUB_TOKEN }}
-      #     pattern: bin/Release/netcoreapp6.0/win-x64/publish/*.exe
-      #     release-url: ${{ steps.create_release.outputs.upload_url }}
+      - uses:  csexton/release-asset-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          pattern: bin/Release/netcoreapp6.0/win-x64/publish/*.exe
+          release-url: ${{ steps.create_release.outputs.upload_url }}
