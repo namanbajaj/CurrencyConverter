@@ -33,7 +33,7 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: ${{ github.ref }}
 
-      - uses: namanbajaj/CurrencyConverter
+      - uses: namanbajaj/CurrencyConverter@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           pattern: bin/Release/netcoreapp6.0/win-x64/publish/*.exe
