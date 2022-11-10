@@ -58,7 +58,7 @@ jobs:
 
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "converter.zip"
+          artifacts: "bin/Release/net6.0-windows/win-x64/publish/converter.zip"
           name: ${{ github.ref }}
           tag: ${{ github.ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
