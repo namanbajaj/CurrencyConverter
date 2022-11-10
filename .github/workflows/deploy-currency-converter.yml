@@ -25,13 +25,13 @@ jobs:
 
       - run: dotnet publish ${{ env.PROJECT_PATH }} -c Release -r win-x64 --no-build
 
-      - uses: actions/create-release@v1
-        id: create_release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
+      # - uses: actions/create-release@v1
+      #   id: create_release
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: ${{ github.ref }}
+      #     release_name: ${{ github.ref }}
       
       # - uses: actions/checkout@v2
       # - uses: vimtor/action-zip@v1
@@ -59,4 +59,6 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "converter.zip"
+          name: ${{ github.ref }}
+          tag: ${{ github.ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
