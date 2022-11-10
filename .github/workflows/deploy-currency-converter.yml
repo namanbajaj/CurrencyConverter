@@ -42,9 +42,8 @@ jobs:
           # files: bin\Release\net6.0-windows\win-x64\publish\
           # dest: converter.zip
       - uses: actions/checkout@master
-          - name: Archive Release
-            uses: thedoctor0/zip-release@main
-            with:
-              type: 'zip'
-              filename: 'converter.zip'
-              path: bin/Release/net6.0-windows/win-x64/publish/
+          uses: thedoctor0/zip-release@main
+          with:
+            type: 'zip'
+            filename: 'converter.zip'
+            path: bin/Release/net6.0-windows/win-x64/publish/
