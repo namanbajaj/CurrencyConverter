@@ -1,6 +1,7 @@
 name: "Deploy Currency Converter"
 
 on:
+  workflow_dispatch: {}
   push:
     tags:
       - "currency-converter/v*"
