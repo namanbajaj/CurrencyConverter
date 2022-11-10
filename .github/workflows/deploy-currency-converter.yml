@@ -41,7 +41,8 @@ jobs:
           # release-url: ${{ steps.create_release.outputs.upload_url }}
           # files: bin\Release\net6.0-windows\win-x64\publish\
           # dest: converter.zip
-      - uses: actions/checkout@master
+      # - uses: actions/checkout@master
+      - uses: actions/create-release@v1
       - uses: thedoctor0/zip-release@main
         with:
           type: 'zip'
