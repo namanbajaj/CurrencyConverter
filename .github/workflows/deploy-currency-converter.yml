@@ -39,5 +39,6 @@ jobs:
           # github-token: ${{ secrets.GITHUB_TOKEN }}
           # pattern: bin/Release/net6.0-windows/win-x64/publish/*.exe
           # release-url: ${{ steps.create_release.outputs.upload_url }}
-          files: CurrencyConverter/bin/Release/net6.0-windows/win-x64/publish/
+          files: D:\a\CurrencyConverter\CurrencyConverter\bin\Release\net6.0-windows\win-x64\publish\
           dest: converter.zip
+
