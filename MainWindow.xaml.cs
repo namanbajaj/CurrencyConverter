@@ -22,6 +22,9 @@ namespace CurrencyConverter
 {
     public partial class MainWindow : Window
     {
+        int fromVal = 0;
+        int toVal = 0;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -475,6 +478,8 @@ namespace CurrencyConverter
             {
                 ConvertedValue = (double.Parse(ToCurrency.SelectedValue.ToString()) * double.Parse(FromAmount.Text)) / double.Parse(FromCurrency.SelectedValue.ToString());
                 ToAmount.Content = ToCurrency.Text + " " + ConvertedValue.ToString("N3");
+                fromVal = FromCurrency.SelectedIndex;
+                toVal = ToCurrency.SelectedIndex;
             }
         }
         
@@ -493,6 +498,15 @@ namespace CurrencyConverter
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private async void Refresh_Values(object sender, RoutedEventArgs e)
+        {
+            val = await GetData<Root>("https://openexchangerates.org/api/latest.json?app_id=58224db5b7b74ab8a5f04580474a797a");
+            BindCurrency();
+            ToCurrency.SelectedIndex = toVal;
+            FromCurrency.SelectedIndex = fromVal;
+            Convert_Click(sender, e);
         }
     }
 }

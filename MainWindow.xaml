@@ -49,7 +49,7 @@
             <ComboBox Name="ToCurrency" Width="170" Height="30" Margin="40 0 0 0" FontSize="18" VerticalContentAlignment="Center" VerticalAlignment="Top" MaxDropDownHeight="150"></ComboBox>
         </StackPanel>
         <StackPanel Grid.Row="3" Height="100" Width="1000" Orientation="Horizontal">
-            <Button Name="Convert" Height="40" Width="150" Content="Convert" Click="Convert_Click" Margin="350 0 20 0" Foreground="White" FontSize="20" Style="{StaticResource ButtonRound}">
+            <Button Name="Convert" Height="40" Width="150" Content="Convert" Click="Convert_Click" Margin="275 0 20 0" Foreground="White" FontSize="20" Style="{StaticResource ButtonRound}">
                 <Button.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                         <GradientStop Color="#FF202CEC" Offset="0.0"/>
@@ -57,7 +57,17 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
+            
             <Button Name="Clear" Height="40" Width="150" Content="Clear" Click="Clear_Click" Foreground="White" FontSize="20" Style="{StaticResource ButtonRound}">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#FF202CEC" Offset="0.0"/>
+                        <GradientStop Color="#FF5839F3" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <Button Content="Refresh" Height="40" Width="150" Margin="20 0 0 0" Click="Refresh_Values" Foreground="White" FontSize="20" Style="{StaticResource ButtonRound}">
                 <Button.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                         <GradientStop Color="#FF202CEC" Offset="0.0"/>
